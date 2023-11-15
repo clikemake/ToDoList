@@ -25,6 +25,7 @@ void MainWindow::on_addTaskBtn_clicked()
 
 void MainWindow::on_exitBtn_clicked()
 {
+    //Окно подтверждения выхода
     QMessageBox qbox;
     qbox.setIcon(QMessageBox::Question);
     qbox.setWindowTitle("Выход");
