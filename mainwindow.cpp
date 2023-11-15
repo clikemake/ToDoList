@@ -31,16 +31,15 @@ void MainWindow::on_exitBtn_clicked()
     qbox.setWindowTitle("Выход");
     qbox.setText("Вы действительно хотите выйти?");
     qbox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+
     QAbstractButton* btnY = qbox.button(QMessageBox::Yes);
     btnY->setText("Да");
+
     QAbstractButton* btnN = qbox.button(QMessageBox::No);
     btnN->setText("Нет");
-    qbox.exec();
 
-    //QMessageBox::StandardButton reply = qbox.question(this, "", "", QMessageBox::Yes | QMessageBox::No);
-        //QMessageBox::question(this, "Выход", "Вы действительно хотите выйти?", QMessageBox::Yes | QMessageBox::No);
+    int result = qbox.exec();
 
-    //if(reply == btnY)
-      //  QApplication::exit();
+    if (result == QMessageBox::Yes)
+        QApplication::exit();
 }
-
