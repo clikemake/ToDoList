@@ -24,6 +24,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         createtask.h createtask.cpp createtask.ui
+        customitemdelegate.h customitemdelegate.cpp
+        customitemdelegatesize.h customitemdelegatesize.cpp
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ToDoList APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

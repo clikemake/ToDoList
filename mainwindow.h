@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QStyledItemDelegate>
+#include <QStandardItemModel>
+#include <QPainter>
+#include <QString>
+#include <QDate>
 
 #include "createtask.h"
 
@@ -17,6 +23,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void resiveData(const QString& taskName, const QString& taskDisc, const QDate& dateStart, const QDate& dateEnd);
+
 private slots:
     void on_addTaskBtn_clicked();
 
@@ -25,5 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     CreateTask *newTask;
+    QStandardItemModel *taskModel;
+    void addItem(const QString& taskName, const QString& taskDisc, const QDate& dateStart, const QDate& dateEnd);
 };
 #endif // MAINWINDOW_H
